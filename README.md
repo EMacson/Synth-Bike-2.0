@@ -1,6 +1,8 @@
 # Synth-Bike-2.0
 
 ## Concept
+This is my new and improved synth bike. This was a project where I iterated on my old synth bike design, by tring to impove the embodiment of the bike. test
+test
 
 ## Circuit Schema
 
