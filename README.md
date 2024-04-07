@@ -37,14 +37,20 @@ Finally, I added glow sticks as I thought they would improve the aesthetic of th
 <img src="./images/IMG_3883.jpg" alt="" />
 
 ## Video Explanation and Demo
-[![IMAGE ALT TEXT HERE](title.png)](https://youtu.be/bunlOOHyu5c)
+[![IMAGE ALT TEXT HERE](./images/title.png)](https://youtu.be/bunlOOHyu5c)
 [Video](https://youtu.be/bunlOOHyu5c)
 
 ## Functionality
 The components for this project are
 - a Raspberry Pi Pico W
+- 5 push buttons
+- a photoresistor
+- a 10k ohm resistor
+- jumper wires
+- a bike
+- a laptop
 
-To run the code, import 
+To run the code, import client.mpy to the pico. You will need to create a config file that contains youe WiFi SSID and password. Next, begin running server.py, it should print out the server's IP address, you will need to make sure this aligns with the IP address the pico is tryong to connect to. From this you can begin running client.mpy on the pico and the two devices should begin to connect. Once connected the terminal running server.py will print the notes in the messages it recieves from the pico, and will print blanks if it has not reieved a note yet. Once a note is recieved the laptop will play the note over your speaker of choice.
 
 ## References
 ### Tutorials Used for the Project
