@@ -22,6 +22,10 @@ Finally, I added glow sticks as I thought they would improve the aesthetic of th
 ## Circuit Schema
 
 ## Photos
+<img src="./images/IMG_3853.jpg" alt="" />
+<img src="./images/IMG_3854.jpg" alt="" />
+<img src="./images/IMG_3857.jpg" alt="" />
+<img src="./images/IMG_3880.jpg" alt="" />
 
 ## Video Explanation and Demo
 [![IMAGE ALT TEXT HERE]()](https://youtu.be/bunlOOHyu5c)
