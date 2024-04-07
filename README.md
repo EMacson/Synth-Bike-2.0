@@ -24,13 +24,17 @@ Finally, I added glow sticks as I thought they would improve the aesthetic of th
 ## Photos
 <img src="./images/IMG_3854.jpg" alt="" />
 <img src="./images/IMG_3857.jpg" alt="" />
+<img src="./images/IMG_3887.jpg" alt="" />
 
 <img src="./images/IMG_3880.jpg" alt="" />
-
 <img src="./images/IMG_3881.jpg" alt="" />
 <img src="./images/IMG_3882.jpg" alt="" />
 <img src="./images/IMG_3883.jpg" alt="" />
-<img src="./images/IMG_3887.jpg" alt="" />
+
+<img src="./images/IMG_3888.jpg" alt="" />
+<img src="./images/IMG_3889.jpg" alt="" />
+<img src="./images/IMG_3895.jpg" alt="" />
+<img src="./images/keys.jpg" alt="" />
 
 ## Video Explanation and Demo
 [![IMAGE ALT TEXT HERE]()](https://youtu.be/bunlOOHyu5c)
