@@ -60,3 +60,7 @@ To run the code, import client.mpy to the pico. You will need to create a config
 - Python Socket Programming Tutorial. (2020b). YouTube. Retrieved March 30, 2024, from https://www.youtube.com/watch?v=3QiPPX-KeSc. 
 
 ### Image Sources from Video
+- Black Pi. (2015). ETCWiki. Retrieved April 6, 2024, from https://www.etcwiki.org/wiki/Wallpapers_-_raspberry_pi.
+- CouldNotThinkALot. (2023). Arduino UNO UHD wallpapers (4965 x 2666). Reddit r/arduino. Retrieved April 6, 2024, from https://www.reddit.com/r/arduino/comments/15wcns5/arduino_uno_uhd_wallpapers_4965_x_2666/.
+- HD python logo wallpapers. (n.d.). Peakpx. Retrieved April 6, 2024, from https://www.reddit.com/r/arduino/comments/15wcns5/arduino_uno_uhd_wallpapers_4965_x_2666/.
+- Hetter, K. (2015). Burning Man ablaze in Nevada desert. CNN Style. Retrieved April 6, 2024, from https://www.cnn.com/style/burning-man-festival-desert-art-temple-pictures/index.html. 
