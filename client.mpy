@@ -1,0 +1,155 @@
+# https://www.youtube.com/watch?v=3QiPPX-KeSc and
+# https://thepihut.com/blogs/raspberry-pi-tutorials/wireless-communication-between-two-raspberry-pi-pico-w-boards
+# were used for socket programming
+# https://www.coderdojotc.org/micropython/sensors/02-photosensor/ was used to learn how to use a photoresistor with a pico
+
+import network
+import time
+import socket
+from machine import Pin
+from config import ssid, password # config.py contains wifi information
+    
+# socket parameters
+HEADER = 64
+PORT = 5050
+FORMAT = 'utf-8'
+DISCONNECT_MESSAGE = "!DISCONNECT"
+SERVER = "192.168.43.195"
+ADDR = (SERVER, PORT)
+
+# button definitions
+button_c = Pin(15, Pin.IN, Pin.PULL_UP)
+button_d = Pin(14, Pin.IN, Pin.PULL_UP)
+button_e = Pin(13, Pin.IN, Pin.PULL_UP)
+button_f = Pin(12, Pin.IN, Pin.PULL_UP)
+button_g = Pin(11, Pin.IN, Pin.PULL_UP)
+button_a = Pin(10, Pin.IN, Pin.PULL_UP)
+button_b = Pin(9, Pin.IN, Pin.PULL_UP)
+button_k = Pin(8, Pin.IN, Pin.PULL_UP)
+button_on = Pin(6, Pin.IN, Pin.PULL_UP)
+button_off = Pin(7, Pin.IN, Pin.PULL_UP)
+
+photo_pin = machine.ADC(26)
+
+photoValue = 0
+photoOldValue = 0
+revStart = 0
+revEnd = 750   
+    
+
+# button strings
+C = "60"
+D = "62"
+E = "64"
+F = "66"
+G = "68"
+A = "70"
+B = "72"
+K = "74"
+
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect(ssid, password)
+while not wlan.isconnected() and wlan.status() >= 0:
+    print("Waiting to connect:")
+    time.sleep(1)
+        
+# Should be connected and have an IP address
+wlan.status() # 3 == success
+wlan.ifconfig()
+print(wlan.ifconfig())
+
+ai = socket.getaddrinfo("192.168.43.195", 5050)
+addr = ai[0][-1]
+
+s = socket.socket() # Open socket
+s.connect(addr)
+
+def connect():
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    wlan.connect(ssid, password)
+    while not wlan.isconnected() and wlan.status() >= 0:
+        print("Waiting to connect:")
+        time.sleep(1)
+        
+    # Should be connected and have an IP address
+    wlan.status() # 3 == success
+    wlan.ifconfig()
+    print(wlan.ifconfig())
+
+    ai = socket.getaddrinfo("192.168.43.195", 5050)
+    addr = ai[0][-1]
+
+    s = socket.socket() # Open socket
+    s.connect(addr)
+    
+def disconnect():
+    send(DISCONNECT_MESSAGE)
+        
+while True:
+    # check for disconnect
+    # used for debugging
+    if button_off.value() == 0:
+        print("off")
+        disconnect()
+        break
+    
+    msg = "a-"
+    
+    photoValue = photo_pin.read_u16()
+
+    #check if wheel has completed a revolution
+    if(photoValue < 5000 and photoOldValue >= 5000) :
+        revEnd = time.time() - revStart
+        revStart = time.time()
+        print("rev")
+
+    photoOldValue = photoValue
+    
+    if revEnd < 500:
+        #print("1.0")
+        msg += "1.0-"
+    elif revEnd >= 500 and revEnd < 750:
+        #print("0.8")
+        msg += "0.8-"
+    elif revEnd >= 750 and revEnd < 1000:
+        #print("0.6")
+        msg += "0.6-"
+    else:
+        #print("0.4")
+        msg += "0.4-"
+    
+    # check which keys have been pressed
+    if button_c.value() == 0:
+        print(C)
+        msg += C + "-"
+    if button_d.value() == 0:
+        print(D)
+        msg += D + "-"
+        #send(C)
+    if button_e.value() == 0:
+        print(E)
+        msg += E + "-"
+    if button_f.value() == 0:
+        print(F)
+        msg += F + "-"
+    if button_g.value() == 0:
+        print(G)
+        msg += G + "-"
+    # additional checks for adding more keys in the future
+    if button_a.value() == 0:
+        print(A)
+        msg += A + "-"
+    if button_b.value() == 0:
+        print(B)
+        msg += B + "-"
+    if button_k.value() == 0:
+        print(K) 
+        msg += K + "-"
+        
+    msg += "b"
+    
+    send(msg)
+    
+    time.sleep(0.2)
