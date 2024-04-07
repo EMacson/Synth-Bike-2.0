@@ -20,6 +20,7 @@ As mentioned I am no longer using supercollider, instead I am using the scamp li
 Finally, I added glow sticks as I thought they would improve the aesthetic of the bike. I could see people riding this bike around music festivals or events happening at night. Someone at the live demo said they could see people riding the bike around Buring Man, and I think that would be the prefect setting for this bike.
 
 ## Circuit Schema
+<img src="./images/circuit.png" alt="Circuit Schema" />
 
 ## Photos
 <img src="./images/IMG_3854.jpg" alt="" />
