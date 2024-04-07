@@ -54,6 +54,9 @@ To run the code, import client.mpy to the pico. You will need to create a config
 
 ## References
 ### Tutorials Used for the Project
-
+- Goodhew, T. (2022, September 9). Wireless Communication Between Two Raspberry Pi Pico W Boards. The PiHut. March 30, 2024, https://thepihut.com/blogs/raspberry-pi-tutorials/wireless-communication-between-two-raspberry-pi-pico-w-boards
+- McCreary, D. (n.d.). Light Sensor with Raspberry Pi Pico in MicroPython. MicroPython for Kids. April 2, 2024, https://www.coderdojotc.org/micropython/sensors/02-photosensor/
+- Playing Notes in SCAMP! (2020a). YouTube. Retrieved March 30, 2024, from https://www.youtube.com/watch?v=xwxt32ollv0&list=PL_yUKG0GRuliyrzaGyrOl5DRHycCbGsRG.
+- Python Socket Programming Tutorial. (2020b). YouTube. Retrieved March 30, 2024, from https://www.youtube.com/watch?v=3QiPPX-KeSc. 
 
 ### Image Sources from Video
